@@ -8,7 +8,7 @@ class Lunch
   def initialize()
     @user = User.new('unknown',0)
     
-    say_hello
+    
   end
 
     def say_hello
@@ -17,7 +17,7 @@ class Lunch
       @user.name = nameinput
       
       puts "Hello #{@user.name}"
-      money_you_have
+     
     end
     
     def money_you_have
@@ -26,7 +26,7 @@ class Lunch
       moneyinput= gets.strip
       @user.money = moneyinput
       puts "You have #{@user.money}$"
-      displays_main_menus
+      
     end
     def displays_main_menus
       @order = Order.new('unknow',0)
@@ -61,11 +61,11 @@ class Lunch
     end
   
       puts "you will order #{@order.order}"
-      displays_side_menus 
+      
     end
 
     def displays_side_menus #X2
-      p "What would you like to order 
+      puts "What would you like to order 
           ---Side Menus---
        1) #{Potato_salad.print_item}
        2) #{Pasta_salad.print_item}
@@ -74,7 +74,7 @@ class Lunch
        orderinput = gets.strip
       case orderinput
        when "1"
-        Potato_salad.name = @order.order
+        Potato_salad.name1 = @order.order
         Potato_salad.money = @order.total
        when "2"
         Pasta_salad.name = @order.order
@@ -87,7 +87,7 @@ class Lunch
         Mashed_potatoes.money = @order.total
       end
       puts "you will order #{@order.order}and the total is #{order.pay_total}"
-      users_order 
+      
     end
     #how to do it agin?
     def users_order #with all order and total money
@@ -100,7 +100,7 @@ class Lunch
     
 end  
 
-Lunch.new
+@app=Lunch.new
 
 
 
@@ -116,3 +116,9 @@ Mushrooms = Side.new('Mushroons',2.99)
 Pasta_salad = Side.new('Pasta Salad', 4.99)
 Potato_salad = Side.new('Potato Salad',2.99)
 
+p @app.say_hello()
+p @app.money_you_have()
+p @app.displays_main_menus()
+p @app.displays_side_menus()
+p @app.displays_side_menus()
+p @app.users_order()

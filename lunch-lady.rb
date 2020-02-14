@@ -4,7 +4,7 @@ require_relative 'user'
 require_relative 'order'
 
 class Lunch
-  attr_accessor :name,:money #name here 
+  attr_accessor :user,:order 
   def initialize()
     @user = User.new('unknown',0)
     @order = Order.new('unknow',0)
@@ -14,9 +14,10 @@ class Lunch
       puts "Hello what is your name"
       nameinput = gets.strip 
       @user.name = nameinput
-      # nameinput = Lunch.new("name")
+      
       puts "Hello #{@user.name}"
-      end
+    end
+    
     def money_you_have
       puts "How much money you have"
     
@@ -43,12 +44,9 @@ class Lunch
         Coconut_Shrimp.name = @order.order
       when "4"
         Crab_Cakes.name = @order.order
-      end
-      end
-      
+    end
 
-      
-      puts "you will order #{order.order}"
+      puts "you will order #{@order.order}"
 
     end
 
@@ -59,16 +57,27 @@ class Lunch
        2) #{Pasta_salad.print_item}
        3) #{Mushrooms.print_item}
        4) #{Mashed_potatoes.print_item}"
-   
+       orderinput = gets.strip
+      case orderinput
+       when "1"
+        Potato_salad.name = @order.order
+       when "2"
+        Pasta_salad.name = @order.order
+       when "3"
+        Mushrooms.name = @order.order
+       when "4"
+        Mashed_potatoes.name = @order.order
+      end
+      puts "you will order #{@order.order}"
     end
 
     def users_order #with all order and total money
-
+@order.prin
       puts "Here is your order"
     end
     
-    
-end
+end  
+
 
 
 
@@ -83,5 +92,4 @@ Mashed_potatoes = Side.new('Mashed potatoes',3.99)
 Mushrooms = Side.new('Mushroons',2.99)
 Pasta_salad = Side.new('Pasta Salad', 4.99)
 Potato_salad = Side.new('Potato Salad',2.99)
-
 

@@ -65,7 +65,7 @@ class Lunch
     end
 
     def displays_side_menus #X2
-      puts "What would you like to order 
+      p "What would you like to order 
           ---Side Menus---
        1) #{Potato_salad.print_item}
        2) #{Pasta_salad.print_item}
@@ -74,11 +74,11 @@ class Lunch
        orderinput = gets.strip
       case orderinput
        when "1"
-        Potato_salad.name1 = @order.order
-        Potato_salad.money = @order.total
+        Potato_salad = Order.new
+
        when "2"
-        Pasta_salad.name = @order.order
-        Pasta_salad.money = @order.total
+        Pasta_salad = Order.new
+        
        when "3"
         Mushrooms.name = @order.order
         Mushrooms.money = @order.total
@@ -86,7 +86,7 @@ class Lunch
         Mashed_potatoes.name = @order.order
         Mashed_potatoes.money = @order.total
       end
-      puts "you will order #{@order.order}and the total is #{order.pay_total}"
+      puts "you will order #{Order.each do }and the total is #{order.pay_total}"
       
     end
     #how to do it agin?

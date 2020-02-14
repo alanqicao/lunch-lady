@@ -1,46 +1,33 @@
+
 require_relative 'main_menus'
 require_relative 'side_menus'
-
+require_relative 'user'
+require_relative 'order'
 class Lunch
   attr_accessor :name,:money #name here 
-  def initialize (name_x,money_x)
-    @name = name_x # name here
-    @money = money_x
+  def initialize()
+    @user = User.new('unknown',0)
+    @order = Order.new('unknow',0)
   end
-    def say_hello
-      puts "Hello what is your name"
-      nameinput = gets.strip 
-      nameinput = Lunch.new("name")
-      puts "Hello #{@name}"
-      end
-    def money_you_have
-      puts "How much money you have"
-      nameinput = Lunch.new("money")
-      moneyinput= gets.strip
-      puts "You have #{@money}$"
-      
-    end
+  
+def displays_main_menus
+  p "What would you like to order
+    ---Main Menus---
+  1) #{Beef_Enchiladas.print_item}
+  2) #{Beer_Brown.print_item}
+  3) #{Coconut_Shrimp.print_item}
+  4) #{Crab_Cakes.print_item}"
+  orderinput = gets.strip
+  
+case orderinput
+  when "1"
+    Beef_Enchiladas = @order.order
+  when "2"
+    Beer_Brown = @order.order
+  when "3"
+    Coconut_Shrimp = @order.order
+  when "4"
+    Crab_Cakes = @order.order
   end
-#     def displays_main_menus
-      
-#     end
-
-#     def displays_side_menus #x2
-#     end
-
-#     def repeats_users_order #with all order and total money
-
-#     end
-    
-    
-# end
-
-
-Lunch.new
-
-
-
-# Mashed_potatoes = Side.new('Mashed potatoes',3.99)
-# Mushrooms = Side.new('Mushroons',2.99)
-# Pasta_salad = Side.new('Pasta Salad', 4.99)
-# Potato_salad = Side.new('Potato Salad',2.99)
+  end
+  displays_main_menus

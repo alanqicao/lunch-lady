@@ -32,6 +32,24 @@ class Lunch
       2) #{Beer_Brown.print_item}
       3) #{Coconut_Shrimp.print_item}
       4) #{Crab_Cakes.print_item}"
+      orderinput = gets.strip
+      
+    case orderinput
+      when "1"
+        Beef_Enchiladas.name = @order.order
+      when "2"
+        Beer_Brown.name = @order.order
+      when "3"
+        Coconut_Shrimp.name = @order.order
+      when "4"
+        Crab_Cakes.name = @order.order
+      end
+      end
+      
+
+      
+      puts "you will order #{order.order}"
+
     end
 
     def displays_side_menus #X2
@@ -66,4 +84,4 @@ Mushrooms = Side.new('Mushroons',2.99)
 Pasta_salad = Side.new('Pasta Salad', 4.99)
 Potato_salad = Side.new('Potato Salad',2.99)
 
- p Potato_salad.print_item
+

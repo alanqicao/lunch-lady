@@ -1,16 +1,21 @@
+require_relative 'main_menus'
+require_relative 'side_menus'
+require_relative 'user'
+require_relative 'order'
 class Order 
   attr_accessor :order,:total
-  def initialize (order, total)
+  def initialize (order,total)
     @order=order
-    @total=money
+    @total=total
   end
 
   def print_item
     "#{@order} - $#{@total}"
   end
   
-  def  pay_total
-    "#{sum@total}"
+  def increase_total(number)
+    @money += number
   end
 
 end
+

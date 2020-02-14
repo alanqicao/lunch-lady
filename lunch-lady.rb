@@ -7,7 +7,7 @@ class Lunch
   attr_accessor :user,:order #name here 
   def initialize()
     @user = User.new('unknown',0)
-    @order = Order.new('unknow',0)
+    
     say_hello
   end
 
@@ -17,6 +17,7 @@ class Lunch
       @user.name = nameinput
       
       puts "Hello #{@user.name}"
+      money_you_have
     end
     
     def money_you_have
@@ -25,9 +26,10 @@ class Lunch
       moneyinput= gets.strip
       @user.money = moneyinput
       puts "You have #{@user.money}$"
-      
+      displays_main_menus
     end
     def displays_main_menus
+      @order = Order.new('unknow',0)
       p "What would you like to order
         ---Main Menus---
       1) #{Beef_Enchiladas.print_item}
@@ -58,10 +60,8 @@ class Lunch
         exit
     end
   
-displays_main_menus
-
       puts "you will order #{@order.order}"
-
+      displays_side_menus 
     end
 
     def displays_side_menus #X2
@@ -87,6 +87,7 @@ displays_main_menus
         Mashed_potatoes.money = @order.total
       end
       puts "you will order #{@order.order}and the total is #{order.pay_total}"
+      users_order 
     end
     #how to do it agin?
     def users_order #with all order and total money
@@ -99,7 +100,7 @@ displays_main_menus
     
 end  
 
-
+Lunch.new
 
 
 

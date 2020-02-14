@@ -1,12 +1,12 @@
 class Order 
-  attr_accessor :order,:money
-  def initialize (order, money)
+  attr_accessor :order,:total
+  def initialize (order, total)
     @order=order
-    @money=money
+    @total=money
   end
 
   def print_item
-    "#{@order} - $#{@money}"
+    "#{@order} - $#{@total}"
   end
 
 end

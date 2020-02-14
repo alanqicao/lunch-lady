@@ -4,7 +4,7 @@ require_relative 'user'
 require_relative 'order'
 
 class Lunch
-  attr_accessor :user,:order 
+  attr_accessor :name,:money #name here 
   def initialize()
     @user = User.new('unknown',0)
     @order = Order.new('unknow',0)
@@ -32,19 +32,28 @@ class Lunch
       1) #{Beef_Enchiladas.print_item}
       2) #{Beer_Brown.print_item}
       3) #{Coconut_Shrimp.print_item}
-      4) #{Crab_Cakes.print_item}"
+      4) #{Crab_Cakes.print_item}
+      5) Exit"
+      
       orderinput = gets.strip
       
     case orderinput
       when "1"
         Beef_Enchiladas.name = @order.order
+        
       when "2"
         Beer_Brown.name = @order.order
+     
       when "3"
         Coconut_Shrimp.name = @order.order
+       
       when "4"
         Crab_Cakes.name = @order.order
+      when "5"
+        exit
     end
+  
+displays_main_menus
 
       puts "you will order #{@order.order}"
 
@@ -70,10 +79,13 @@ class Lunch
       end
       puts "you will order #{@order.order}"
     end
-
+    #how to do it agin?
     def users_order #with all order and total money
-@order.prin
-      puts "Here is your order"
+
+      p "Here is your order
+      #{@order.print_item}and #{@total.print_item}
+      "
+    
     end
     
 end  

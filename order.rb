@@ -8,5 +8,9 @@ class Order
   def print_item
     "#{@order} - $#{@total}"
   end
+  
+  def  pay_total
+    "#{sum@total}"
+  end
 
 end

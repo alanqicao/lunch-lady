@@ -4,10 +4,11 @@ require_relative 'user'
 require_relative 'order'
 
 class Lunch
-  attr_accessor :name,:money #name here 
+  attr_accessor :user,:order #name here 
   def initialize()
     @user = User.new('unknown',0)
     @order = Order.new('unknow',0)
+    say_hello
   end
 
     def say_hello
@@ -40,15 +41,19 @@ class Lunch
     case orderinput
       when "1"
         Beef_Enchiladas.name = @order.order
+        Beef_Enchiladas.money = @order.total
         
       when "2"
         Beer_Brown.name = @order.order
+        Beer_Brown.money = @order.total
      
       when "3"
         Coconut_Shrimp.name = @order.order
+        Coconut_Shrimp.money = @order.total
        
       when "4"
         Crab_Cakes.name = @order.order
+        Crab_Cakes.money = @order.total
       when "5"
         exit
     end
@@ -70,25 +75,30 @@ displays_main_menus
       case orderinput
        when "1"
         Potato_salad.name = @order.order
+        Potato_salad.money = @order.total
        when "2"
         Pasta_salad.name = @order.order
+        Pasta_salad.money = @order.total
        when "3"
         Mushrooms.name = @order.order
+        Mushrooms.money = @order.total
        when "4"
         Mashed_potatoes.name = @order.order
+        Mashed_potatoes.money = @order.total
       end
-      puts "you will order #{@order.order}"
+      puts "you will order #{@order.order}and the total is #{order.pay_total}"
     end
     #how to do it agin?
     def users_order #with all order and total money
 
       p "Here is your order
-      #{@order.print_item}and #{@total.print_item}
+      #{@order.print_item}and #{@total.pay_total}
       "
     
     end
     
 end  
+
 
 
 
